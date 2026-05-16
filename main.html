@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | Anzy2026</title>
+    <!-- 引入图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* 页面背景：深蓝渐变 */
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0a192f 0%, #112240 100%);
+            overflow-x: hidden;
+            color: #ccd6f6;
+        }
+
+        /* 半透明磨砂容器 */
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 10, 30, 0.37);
+        }
+
+        /* 页面容器 */
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 40px;
+            border-radius: 20px;
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        /* 标题动画 */
+        h1 {
+            font-size: 42px;
+            color: #64ffda;
+            margin-bottom: 10px;
+            animation: slideDown 1s ease-out;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #8892b0;
+            margin-bottom: 40px;
+            animation: slideDown 1.1s ease-out;
+        }
+
+        /* 内容卡片 */
+        .card {
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            transition: all 0.3s ease;
+            animation: slideUp 1s ease-out;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(100, 255, 218, 0.3);
+        }
+
+        .card h2 {
+            color: #e6f1ff;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #ccd6f6;
+        }
+
+        /* 技能标签 */
+        .skills {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .python {
+            background: rgba(52, 105, 153, 0.3);
+            color: #4b8bbe;
+        }
+
+        .cpp {
+            background: rgba(20, 72, 121, 0.3);
+            color: #00599c;
+        }
+
+        /* GitHub 按钮 */
+        .github-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            border-radius: 10px;
+            background: rgba(100, 255, 218, 0.1);
+            color: #64ffda;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: 1px solid #64ffda;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .github-btn:hover {
+            background: rgba(100, 255, 218, 0.2);
+            transform: scale(1.05);
+        }
+
+        /* 动画 */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 响应式适配手机 */
+        @media (max-width: 768px) {
+            h1 { font-size: 32px; }
+            .container { padding: 20px; margin: 20px auto; }
+            .card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container glass">
+        <h1>你好，我是 Anzy2026</h1>
+        <p class="subtitle">热爱编程与创造的开发者</p>
+
+        <!-- 关于我 -->
+        <div class="card glass">
+            <h2><i class="fas fa-user"></i> 关于我</h2>
+            <p>我是一名热爱编程的开发者，专注于代码创作与技术探索，享受用程序解决问题、创造价值的过程。</p>
+        </div>
+
+        <!-- 我的技能 -->
+        <div class="card glass">
+            <h2><i class="fas fa-code"></i> 我的热爱</h2>
+            <p>我最喜欢的编程语言：</p>
+            <div class="skills">
+                <div class="tag python">Python</div>
+                <div class="tag cpp">C++</div>
+            </div>
+            <p style="margin-top:15px;">凭借 Python 的高效简洁与 C++ 的强大性能，我完成了无数有趣的项目。</p>
+        </div>
+
+        <!-- 我的设备 -->
+        <div class="card glass">
+            <h2><i class="fas fa-laptop"></i> 创作设备</h2>
+            <p>我的所有代码与项目，都诞生在一台 <strong>477GB 存储空间的 MateBook 13</strong> 笔记本电脑中。</p>
+            <p>这台设备陪伴我完成了大量开发、学习与创作工作。</p>
+        </div>
+
+        <!-- GitHub -->
+        <div class="card glass">
+            <h2><i class="fab fa-github"></i> 我的 GitHub</h2>
+            <p>欢迎访问我的 GitHub 主页，查看我的项目与代码作品：</p>
+            <a href="https://github.com/anzy2026" target="_blank" class="github-btn">
+                <i class="fab fa-github"></i> anzy2026
+            </a>
+        </div>
+    </div>
+</body>
+</html>
