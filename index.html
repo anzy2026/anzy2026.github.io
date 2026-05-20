@@ -6,17 +6,24 @@
     <title>About Me | Anzy2026（升级版：禁用开发者工具）</title>
     <!--- 禁用F12 -->
     <script>
-        setInterval(function() {
-​
-            var startTime = performance.now();
-            debugger; 
-            var endTime = performance.now();
-            if (endTime - startTime > 100) {
-                window.location.href = 'about:blank';
-            } 
-            
-        }, 100);
-​
+    // 禁用右键菜单
+        document.addEventListener('contextmenu', e => e.preventDefault());
+    // 禁用常见快捷键
+        document.addEventListener('keydown', e => {
+            if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I') || (e.ctrlKey && e.key === 'u')) {
+               e.preventDefault();
+       }
+});
+// 检测开发者工具是否打开
+    setInterval(() => {
+       const devtools = /./;
+       devtools.toString = function () { return 'devtools'; };
+       console.log(devtools);
+       if (devtools.toString() === 'devtools') {
+           alert('已禁用开发者工具！');
+           location.href = '/';
+   }
+    }, 1000);
     </script>
     <!-- 引入图标库 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
